@@ -1,0 +1,149 @@
+
+*{
+  margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
+  
+ 
+}
+a {
+  text-decoration: none;
+  color: black;
+  color: white;
+}
+header{
+	width: 100%;
+	height: 90px;
+	
+}
+body{
+  /* background-image:url(./imagenes/fondo_1.png);
+  background-repeat: no-repeat;
+  background-size:100%; */
+  background: -webkit-linear-gradient(to right, #000428, #004e92); 
+  background: linear-gradient(to right, #000428, #004e92); 
+}
+.logo{
+  width: 150px;
+}
+
+.imagenesCard{
+  width: 315px;
+ height: 325px;
+ border-radius: 30px;
+ border-style: outset;
+}
+
+/*Footer*/
+.pie-pagina {
+  width: 100vw;
+  
+}
+.pie-pagina .contenido1 {
+  width: 100vw;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap:30px;
+  padding: 25px 0px;
+}
+.pie-pagina .contenido1 .cajita img {
+  width: 200px;
+  height: 180px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pie-pagina .contenido1 .cajita iframe {
+  width: 300px;
+  height: 250px;
+  margin-top: 20px;
+}
+@media screen and (max-width: 800px) {
+  .pie-pagina .contenido1 {
+    width: 90vw;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    padding: 10px 0px;
+  }
+}
+
+/* 
+redes fixed  */
+.redes {
+  position:fixed;
+  right: 0;
+  top: 35%;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 100;
+  width: 10px;
+}
+
+.iconos {
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem;
+  display: flex;
+  transition: all 0.5s;
+  width: 60px;
+}
+.iconos:hover {
+  transform: scale(1.5) rotate(20deg);
+  opacity: 0.6;}
+
+
+
+/* 
+@media screen and (min-width: 1200px){
+.buttons {
+  margin: 5%;
+  text-align: center;
+  
+}
+
+.btn-hover {
+  width: 130px;
+  font-size: 13px;
+  font-weight: 300;
+  color: black;
+  cursor: pointer;
+  margin: 15px;
+  height: 50px;
+ 
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 40px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+.btn-hover.color-7 {
+  background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+  box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+.btn-hover.color-3 {
+  background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}
+} */

@@ -1,0 +1,126 @@
+
+//****************************************CATALOGO*******************//
+
+const producto1 = new Producto(
+  1,
+  "Sony",
+  "Play Station 5",
+  "usado",
+  "tecnologia",
+  400000,
+  "play5.jpg"
+);
+const producto3 = new Producto(
+  2,
+  "Samsung",
+  "Smart TV 50` 4k Serie 8",
+  "usado",
+  "tecnologia",
+  150000,
+  "play5.jpg"
+);
+const producto2 = new Producto(
+  3,
+  "Apple",
+  "Iphone 14 Pro MAX",
+  "nuevo",
+  "tecnologia",
+  652000,
+  "iphone_14.jpg"
+);
+const producto4 = new Producto(
+  4,
+  "Oster",
+  "Cafetera Mod.620 plus",
+  "nuevo",
+  "Electrodomesticos",
+  44000,
+  "play5.jpg"
+);
+const producto5 = new Producto(
+  5,
+  "ATMA",
+  "Horno Electrico 40 Lts. c/grill",
+  "nuevo",
+  "Electrodomesticos",
+  28000,
+  "horno_electrico.jpg"
+);
+const producto6 = new Producto(
+  6,
+  "Samsung",
+  "lavarropas Aut.9kg WF1904",
+  "nuevo",
+  "Electrodomesticos",
+  180000,
+  "lavarropas_samsung.jpeg"
+);
+const producto7 = new Producto(
+  7,
+  "Placard Rivadavia",
+  "Delta 2P. 2x.1.4 mts",
+  "nuevo",
+  "Hogar y Muebles",
+  55000,
+  "placard.jpg"
+);
+const producto8 = new Producto(
+  8,
+  " Rivadavia",
+  "Mesa 1,40+6 Sillas",
+  "nuevo",
+  "Hogar y Muebles",
+  44300,
+  "juego_mesa.jpg"
+);
+const producto9 = new Producto(
+  9,
+  "Sillon Esquinero",
+  "Sofa 3C. 1.8m x 0.9m ",
+  "nuevo",
+  "Hogar y Muebles",
+  62800,
+  "sillon.jpg"
+);
+
+
+
+const productosCatalogo = async()=>{
+
+  const resp= await fetch ("productos.json")
+  const info2 = await resp.json()
+  
+  divProductos.innerHTML = "";
+  for (let articulo of info2) {
+        let nuevoProducto = document.createElement("div");
+    
+        nuevoProducto.innerHTML = ` <div class="card " style="width: 18rem;">
+                                         <img src="../imagenes/productos/${
+                                           articulo.imagen
+                                         }" class="card-img-top" alt="...">
+                                         <div class="card-body">
+                                           <h4 class="card-title">${
+                                             articulo.marca
+                                           }</h4>
+                                            <h5 class="card-title">${
+                                              articulo.modelo
+                                            }</h5>articulo
+                                            <p class="card-text">Condicion:  ${
+                                               articulo.condicion
+                                             }</p>
+                                            <p class="card-text">  Valor de Cuotaparte: $${
+                                              articulo.precio / tickets
+                                            }</p>
+                                             <a href="#" id= "agregarBtn${
+                                               articulo.id
+                                             }" class="btn btn-outline-dark">Agregar</a>
+                                          </div>
+                                         </div>`;
+         divProductos.appendChild(nuevoProducto);
+    
+         let bntAgregar = document.getElementById(`agregarBtn${producto.id}`);
+         bntAgregar.addEventListener("click", () => {
+           agregarAlCarrito(producto);
+         });
+       }
+}

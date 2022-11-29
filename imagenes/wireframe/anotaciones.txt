@@ -1,0 +1,863 @@
+// class Usuario {
+// 	constructor(dni, nombre, apellido, fechaNac, domicilio, telefono, correoElectronico) {
+	// 	function Usuario(dni, nombre, apellido, fechaNac, domicilio, telefono, correoElectronico){
+	// 		this.nombre = nombre;
+	// 		prompt(`Bienvenido! Ingresa tu nombre`)
+	// 		this.apellido = apellido;
+	// 		prompt(`Ingresa tu apellido`)
+	// 		this.fechaNac = fechaNac,
+	// 		prompt(`Ingresa tu año de nacimiento`);
+	// 		this.dni = dni;
+	// 		parseInt(prompt(`Ingresa tu DNI`));
+	// 		this.domicilio = domicilio,
+	// 		prompt(`Ingresa tu Domicilio y Localidad`);
+	// 		this.telefono = telefono,
+	// 		parseInt(prompt(`Ingresa tu telefono`));
+	// 		this.correoElectronico = correoElectronico
+	// 		prompt(`Por ultimo requerimos tu correo electronico`);
+
+	// }
+---------------------------------------------------------
+  
+// function pedirNombre() {
+//     let nombre = prompt(`Bienvenido/a a LCET  ¿Como te llamas?`);
+//     return nombre;
+// }
+
+let mayorQueDiez=mayorQue(10)
+//(m)=> m > 10
+console.log(mayor que Diez (15))
+(15)=> 15>10
+
+for n para recorrer un objeto por dentro
+*/
+
+
+
+--------------------------------------------------
+/*
+//Buscador 
+
+const formulario = document.querySelector(`#formulario`);
+const boton= document.querySelector(`#boton`);
+const resultado = document.querySelector(`#resultado`)
+
+
+
+const filtrar = ()=>{
+	// console.log(formulario.value)
+const texto = formulario.value.toLowerCase()
+for(let productos of catalogo){
+	let nombre = productos.nombre.toLowerCase()
+	if (nombre.indexOf(texto) !== -1){
+		resultado.innerHTML += `
+		<li> ${producto.nombre} - valor : ${`producto.valor`}</li>`
+
+	}
+	if (resultado.innerHTML === ``){
+		resultado.innerHTML +=`
+<li>Producto no encontrado</li>`
+
+	}
+}
+boton.addEventListener(`click`, filtrar)
+ //muestra en consola lo que se escriba 
+
+*/
+// const producto1 = new Producto(1, "samsung", "Galaxy S22+", "celular", "tecnologia", "negro", 300000)
+// const producto2 = new Producto(2, "motorola", "G20", "celular", "tecnologia", "negro", 84000)
+// const producto3 = new Producto(3, "deco", "Ropero 2m x 1.40 m", "placard", "Hogar & Deco", "blanco", 50000)
+// const producto4 = new Producto(4, "luminax", "Lampara de escriorio Premium", "ilumunacion", "hogar & deco", "rojo", 25000)
+// const producto5 = new Producto(5, "levis", "instinct", "jean corte clasico", "indumentaria", "blue", 38000)
+// const producto6 = new Producto(6, "47 Street", "T-shirt Street", "remera", "indumentaria", "blaco y negro", 4300)
+// const producto7 = new Producto(7, "antonio banderas", "the golden secret 100ml", "perfume para hombre", "perfumes", "undefined", 5546)
+// const producto8 = new Producto(8, "carolina herrera", "good girl 80ml", "perfume para mujer", "perfumes", "undefined", 25491)
+ 
+// let catalogo = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8]
+
+
+/* <<<<<<<<<<<<<<<<<SEGUNDA ENTREGA>>>>>>>>>>>>>>>>>>*/
+
+/*
+
+
+
+class Usuario {
+	constructor(dni, nombre, apellido, fechaNac, domicilio, telefono, correoElectronico) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.fechaNac = fechaNac,
+			this.dni = dni,
+			this.domicilio = domicilio,
+			this.telefono = telefono,
+			this.correoElectronico = correoElectronico
+	}
+}
+
+let nuevoUsuario = (user) => {
+	let nombreIngresado = prompt(` Ingresa tu nombre`)
+	let apellidoIngresado = prompt(`Ingresa tu apellido`)
+	let fechaNacIngresado = prompt(`Ingresa tu año de nacimiento`);
+	let dniIngresado = Number(prompt(`Ingresa tu DNI`));
+	let domicilioIngresado = prompt(`Ingresa tu Domicilio y Localidad`);
+	let telefonoIngresado = Number(prompt(`Ingresa tu telefono`));
+	let correoElectronicoIngresado = prompt(`Por ultimo requerimos tu correo electronico`);
+	let usuarioCreado = new Usuario(nombreIngresado, apellidoIngresado, fechaNacIngresado, dniIngresado, domicilioIngresado, telefonoIngresado, correoElectronicoIngresado)
+	console.log(usuarioCreado)
+	user.push(usuariosRegistrados)
+	console.log(user)
+}
+
+
+let usuariosRegistrados = []
+
+/*****************************************************************************************/
+
+class Producto {
+	constructor(marca, modelo, tipoProducto, segmento, color, valor) {
+
+		this.marca = marca,
+			this.modelo = modelo,
+			this.tipoProducto = tipoProducto,
+			this.segmento = segmento,
+			this.color = color,
+			this.valor = valor
+
+	}
+}
+
+
+let nuevoProducto = (objeto) => {
+	let marcaIngresado = prompt(`Ingrese la Marca`)
+	let modeloIngresado = prompt(`Ingrese el modelo`)
+	let tipoPorductoIngresado = prompt(`¿Que tipo de producto es?`)
+	let segmentoIngresado = Number(prompt(`¿A cual de estos segmentos pertenece ?
+	1-Tecnologia
+	2-Hogar & Deco 
+	3-Indumentaria 
+	4-Perfumes`))
+	let coloIngresado = prompt(` Ingrese el color`)
+	let valorIngresado = parseInt(prompt(` Indique el precio`))
+	let productoCreado = new Producto(marcaIngresado, modeloIngresado, tipoPorductoIngresado, segmentoIngresado, coloIngresado, valorIngresado)
+	console.log(productoCreado)
+	objeto.push(catalogo) //salta error "Cannot read properties of undefined (reading 'push')"
+	console.log(objeto)
+}
+
+
+let catalogo = [
+	{ marca: "samsung", modelo: "Galaxy S22+", tipoProducto: "celular", segmento: "tecnologia", color: "negro", valor: 300000 },
+	{ marca: "motorola", modelo: "G20", tipoProducto: "celular", segmento: "tecnologia", color: "negro", valor: 84000 },
+	{ marca: "deco", modelo: "Ropero 2m x 1.40 m", tipoProducto: "placard", segmento: "Hogar & Deco", color: "negro", valor: 50000 },
+	{ marca: "luminax", modelo: "Lampara de escriorio Premium", tipoProducto: "lampara", segmento: "Hogar & Deco", color: "negro", valor: 25000 },
+	{ marca: "levis", modelo: "instinct", tipoProducto: "jean corte clasico", segmento: "indumentaria", color: "negro", valor: 38000 },
+	{ marca: "47 Street", modelo: "T-shirt Street", tipoProducto: "remera", segmento: "indumentaria", color: "negro", valor: 4300 },
+	{ marca: "antonio banderas", modelo: "the golden secret 100ml", tipoProducto: "perfume para hombre", segmento: "perfumes", color: "indefinido", valor:5546 },
+	{ marca: "carolina herrera", modelo: "good girl 80ml", tipoProducto: "perfume para mujer", segmento: "perfumes", color: "indefinido", valor: 25491 },
+]
+
+
+function verCatalogo(array) {
+	for (let catalogo of array) {
+		alert(`Nuestro Stock actual es:  -Marca: ${catalogo.marca} ,
+		 -Modelo : ${catalogo.modelo}, 
+		 -Tipo Producto: ${catalogo.tipoProducto}, 
+		 -Segmento: ${catalogo.segmento} , 
+		 -Color : ${catalogo.color} , 
+		 -Precio : $${catalogo.valor}`)
+	}
+}
+
+
+
+let segmentoSeleccionado = catalogo.filter(
+	(segmentoElegido) => segmentoElegido.segmento === "tecnologia")
+
+let segmentoSeleccionado2 = catalogo.filter(
+	(segmentoElegido) => segmentoElegido.segmento === "Hogar & Deco")
+
+let segmentoSeleccionado3 = catalogo.filter(
+	(segmentoElegido) => segmentoElegido.segmento === "indumentaria")
+
+let segmentoSeleccionado4 = catalogo.filter(
+	(segmentoElegido) => segmentoElegido.segmento === "perfumes")
+
+//el JSON.stringifymétodo nativo . Funciona con objetos anidados y todos los principales navegadores admiten este método.
+
+
+
+/** 
+
+
+function main() {
+	let opciones = parseInt(prompt(
+		`Bienvenido/a a LCET ! Tenemos los siguientes segmentos para ofrecerte \n1.-Tecnologia\n2.-Hogar & Deco \n3.-Indumentaria \n4.-Perfumes\n5.-Agregar Producto \n6.-Registrarme\n7.-Ver Catalogo completo\n8.-Quiero Navegar por mi cuenta `));
+	menu(opciones)
+}
+function menu(opcionElegida) {
+	switch (opcionElegida) {
+
+		case 1:
+			//quiero que imprima en pantalla los dos objetos con tecnologia
+			alert(JSON.stringify(segmentoSeleccionado))
+			console.table(segmentoSeleccionado);
+			salir = true
+			break
+		case 2:
+			alert(JSON.stringify(segmentoSeleccionado2))
+			console.table(segmentoSeleccionado2);
+			salir = true
+			break
+		case 3:
+			alert(JSON.stringify(segmentoSeleccionado3))
+			console.table(segmentoSeleccionado3);
+			salir = true
+			break
+		case 4:
+				
+			console.table(segmentoSeleccionado4);
+			salir = true
+			break
+		case 5:
+			nuevoProducto(catalogo)
+			console.table(nuevoProducto)
+			//falta indicar que si no elige el numero correcto del segmento sate error en un alert.
+			alert("Producto Agregado Exitosamente")
+			
+			break
+		case 6:
+			nuevoUsuario(usuariosRegistrados)
+			alert(` Registrado Exitosamente , Bienvenido ! ${nuevoUsuario.nombreIngresado} `) //no me toma el nombre
+
+			salir = true
+			break
+		case 7:
+		verCatalogo(catalogo)
+		
+			break
+		case 8:
+			salir = true
+			alert("Perfecto! cualquier cosa volve a consultar")
+			break
+		default:
+			alert(`Ingresa una opcion correcta`)
+	}
+}
+let salir = false
+while (salir != true) {
+
+	let opcionElegida = main()
+}
+
+*/*/
+
+	<!-- //modal -->
+
+		<div class="modal" id="idModal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Carrito de compras/h5>
+
+					</div>
+					<div class="modal-body">
+						<p>Modal body text goes here.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn btn-primary" id="botonFinalizarCompra">Finalizar
+							compra</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class=" modal registrate " tabindex="-1" id="inicioSesion">
+			<form action="" class="formulario">
+				<div>
+					<button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<h2 class="titulo">Registro</h2>
+				<div class="padre">
+
+					<div class="nombre">
+						<label for="">Nombre</label>
+						<input type="text" />
+					</div>
+
+					<div class="apellido">
+						<label for="">Apellido</label>
+						<input type="text" />
+					</div>
+					<div class="añoNacimiento">
+						<label for="">Año de Nacimiento</label>
+						<input type="text" />
+					</div>
+					<div class="dni">
+						<label for="">DNI</label>
+						<input type="text" />
+					</div>
+					<div class="celular">
+						<label for="">Telefono Celular</label>
+						<input type="text" />
+					</div>
+					<div class="mail">
+						<label for="">Correo electronico</label>
+						<input type="text" />
+					</div>
+					<div class="clave">
+						<label for="">Contraseña</label>
+						<input type="password" />
+					</div>
+					<div class="cuenta">
+						<p> ¿Ya tienes una cuenta? <a class="link" href="#">Ingresa</a></p>
+						<input class="btnRegistrar" type="button" value="Registrar">
+					</div>
+
+				</div>
+
+
+
+
+
+			</form>
+		</div>
+
+		let btnDark = document.getElementById('botonDarkMode')
+
+let btnLight = document.getElementById('botonLightMode')
+
+let modoOscuro= localStorage.getItem("modoOscuro")
+if(modoOscuro == "true") {
+	document.body.style.backgroundColor = "black"
+	document.body.style.color= "white"
+}else{ document.body.style.backgroundColor = "white"
+document.body.style.color= "black"}
+
+btnDark.addEventListener('click', ()=>{
+	console.log("funciona btn oscuro")
+	document.body.style.backgroundColor="black"
+document.body.style.color="white"
+localStorage.setItem("modoOscuro", true)
+})
+
+btnLight.addEventListener('click', ()=>{
+	console.log("funciona")
+	document.body.style.backgroundColor="white"
+document.body.style.color="black"
+	localStorage.setItem("modoOscuro", false)
+})
+
+//estructura producto
+/*
+class Producto {
+	constructor(marca, modelo, condicion, segmento, descripcion, precio, imagen) {
+		this.marca = marca,
+			this.modelo = modelo,
+			this.condicion = condicion,
+			this.segmento = segmento,
+			this.descripcion = descripcion,
+			this.precio = precio,
+			this.imagen = imagen
+	}
+}
+
+const producto1 = new Producto("Sony", "Play Station 5", "usado", "tecnologia", "centro de entretenimiento", 400000, "play5.jpg")
+const producto2 = new Producto("Oster", "620 plus", "nuevo", "deco & hogar", "cafetera uso personal", 44000, "play5.jpg")
+const producto3 = new Producto("Samsung", "Smart TV 50` 4k Serie 8", "usado", "tecnologia", "celular ", 150000, "play5.jpg")
+// let catalogo = [producto1, producto2, producto3]
+let catalogo=[]
+//seteando array
+if(localStorage.getItem("catalogo"))
+{
+estanteria= JSON.parse( localStorage.getItem("catalogo"))
+}else{
+	catalogo.push(producto1,producto2,producto3)
+	localStorage.setItem("catalogo", JSON.stringify(catalogo))
+}
+
+//estrutura usuario
+
+
+// Mostrar catalogo
+	let productos = document.getElementById("productos")
+	let tickets = 200;
+
+	function mostrarCatalogo(array) {
+		// productos.innerHTML = "";
+		for (let productoCatalogo of array) {
+
+			let nuevoProducto = document.createElement("div")
+			nuevoProducto.innerHTML = `<div class="contenedor" id="contenedor">
+																		<div>
+																			<img class="img" src="../imagenes/tecnologia/play5.jpg" alt="producto1">
+																			<div class="informacion">
+																				<p>${productoCatalogo.marca}</p>
+																				<p> ${productoCatalogo.modelo}</p>
+																				<p class="precio "><span> Valor de Cuotaparte: </span>$${productoCatalogo.precio / tickets} </p>
+																				<button>Comprar</button>
+		 																	</div>`
+			productos.appendChild(nuevoProducto)
+		}
+	}
+	 mostrarCatalogo(catalogo)
+
+	// let btnPublicarProducto = document.getElementById("btnPublicar")
+	let btnBuscar = document.getElementById("btnBuscar")
+// hacer un filter para que busque los productos
+
+//Carga de productos y guardado ( no se me aplica al array productos)
+let divProductos =document.getElementById(`productoCatalogo`)
+let tickets= 200;
+
+function mostrarCatalogo(array) {
+          for (let producto of array) {
+              let nuevoProducto = document.createElement('div')
+                  nuevoProducto.innerHTML = `<div class="contenedor" id="contenedor"><div>
+                                            <img class="img" src="../imagenes/tecnologia/play5.jpg" alt="producto1">
+                                            <div class="informacion">
+                                            <p>${producto.marca}</p>
+                                              <p> ${producto.modelo}</p>
+                                            <p class="precio "><span> Valor de Cuotaparte: </span>$${producto.precio / tickets} </p>
+                                              <button>Comprar</button>
+                                            </div>`
+
+
+    divProductos.appendChild(nuevoProducto)
+  } 
+}
+mostrarCatalogo(catalogo)
+function cargarProducto(array) {
+
+	let inputMarca = document.getElementById('marcaInput')
+	let inputModelo = document.getElementById('modeloInput')
+	let inputCondicion = document.getElementById('condicionInput')
+	let inputDescripcion = document.getElementById('descripcionInput')
+	let inputPrecio = document.getElementById('precioInput')
+	let inputSegmento = document.getElementById('segmentoInput')
+
+
+	let productoCargado = new Producto(array.length + 1, inputMarca.value, inputModelo.value, inputCondicion.value, inputDescripcion.value, inputPrecio.value, inputSegmento.value, "play5.jpg")
+	array.push(productoCargado)
+	//modificar array del storage
+	localStorage.setItem("catalogo", JSON.stringify
+		(array))
+	mostrarCatalogo(array)
+	console.log(productoCargado)
+	//reiniciar //function resetear form --buscar--
+	inputMarca.value = ""
+	inputModelo.value = ""
+	inputCondicion.value = ""
+	inputDescripcion.value = ""
+	inputPrecio.value = ""
+	inputSegmento.value = ""
+}
+mostrarCatalogo(catalogo)
+
+
+btnPublicarProducto.addEventListener("click", () => { cargarProducto(catalogo) })
+btnBuscar.addEventListener("input", () => { console.log(btnBuscar.value) }) //hacer un filtro para que aparezcan los productos con fine y filtrer
+
+
+
+
+
+
+
+
+*/
+// function cargarUsuario(array){
+// 	let nuevoUsuario = (user) => {
+// 		let nombreIngresado = prompt(` Ingresa tu nombre`)
+// 		let apellidoIngresado = prompt(`Ingresa tu apellido`)
+// 		let fechaNacIngresado = prompt(`Ingresa tu año de nacimiento`);
+// 		let dniIngresado = Number(prompt(`Ingresa tu DNI`));
+// 		let domicilioIngresado = prompt(`Ingresa tu Domicilio y Localidad`);
+// 		let telefonoIngresado = Number(prompt(`Ingresa tu telefono`));
+// 		let correoElectronicoIngresado = prompt(`Por ultimo requerimos tu correo electronico`);
+// 		let contraseña = Number(prompt("Ingrese una contraseña numerica de 6 digitos"))
+// 		let usuarioCreado = new Usuario(nombreIngresado, apellidoIngresado, fechaNacIngresado, dniIngresado, domicilioIngresado, telefonoIngresado, correoElectronicoIngresado, contraseña)
+// 		console.log(usuarioCreado)
+// 		user.push(usuariosRegistrados)
+// 		console.log(user)
+// 	}
+
+
+
+// }
+/*
+//DARK Mode
+
+let btnDark = document.getElementById('botonDarkMode')
+let btnLight = document.getElementById('botonLightMode')
+
+
+if (localStorage.getItem("modoOscuro")) {
+	modoOscuro = localStorage.getItem("modoOscuro")
+} else {
+	localStorage.setItem("modoOscuro", true)
+	modoOscuro = "true"
+}
+if (modoOscuro == "true") {
+	document.body.classList.add('darkMode')
+} else {
+	document.body.classList.remove("darkMode")
+}
+
+
+btnDark.addEventListener('click', () => {
+	console.log("funciona btn oscuro")
+	document.body.classList.add('darkMode')
+	localStorage.setItem("modoOscuro", true)
+})
+
+btnLight.addEventListener('click', () => {
+	console.log("funciona claro")
+	document.body.classList.remove("darkMode")
+	localStorage.setItem("modoOscuro", false)
+})
+*/
+
+
+  <header>
+        <!-- barra nav lateral
+        <nav class="nav">
+            <ul class="list">
+                <li class="list__item">
+                    <div class="list__button">
+                        <img src="assets/dashboard.svg" class="list__img">
+                        <a href="#" class="nav__link">Inicio</a>
+                    </div>
+                </li>
+                <li class="list__item list__item--click">
+                    <div class="list__button list__button--click">
+                        <img src="assets/docs.svg" class="list__img">
+                        <a href="#" class="nav__link">Productos</a>
+                        <img src="assets/arrow.svg" class="list__arrow">
+                    </div>
+                    <ul class="list__show">
+                        <li class="list__inside">
+                            <a href="#" id="mostrarTecnologia" class="nav__link nav__link--inside">Tecnologia</a>
+                        </li>
+                        <li class="list__inside">
+                            <a href="./paginas/electrodomesticos.html" id="mostrar D&H" class="nav__link nav__link--inside">Electrodomesticos</a>
+                        </li>
+                        <li class="list__inside">
+                            <a href="./paginas/hogar_muebles.html" id="mostrarIndumentaria" class="nav__link nav__link--inside">Hogar y Muebles</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list__item">
+                    <div class="list__button">
+                        <img src="assets/stats.svg" class="list__img">
+                        <a href="#" class="nav__link">Nosotros</a>
+                    </div>
+                </li>
+                <li class="list__item    list__item--click">
+                    <div class="list__button    list__button--click">
+                        <img src="assets/bell.svg" class="list__img">
+                        <a href="#" class="nav__link">Perfil</a>
+                        <img src="assets/arrow.svg" class="list__arrow">
+                    </div>
+                    <ul class="list__show">
+                        <li class="list__inside">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal_1_id"
+                                class="nav__link nav__link--inside">Login</a>
+                        </li>
+                        <li class="list__inside">
+                            <a href="#" data-bs-target="#modalPublicar" data-bs-toggle="modal" id="btnCargarProducto"
+                                class="nav__link nav__link--inside">Agregar Productos</a>
+                        </li>
+                        <li class="list__inside">
+                            <a href="#" class="nav__link nav__link--inside">Cerrar Sesion</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list__item">
+                    <div class="list__button">
+                        <img src="assets/message.svg" class="list__img">
+                        <a href="#" id="btnCarrito" data-bs-toggle="modal" data-bs-target="#idModal"
+                            class="nav__link">Carrito</a>
+                    </div>
+                </li>
+
+            </ul>
+
+        </nav> -->
+
+				
+
+/*Vertical Menu
+header{
+  padding-right: 10px;
+}
+.nav{
+  width: 300px;
+}
+
+.nav__link{
+  color: #303440;
+  display: block;
+  padding: 15px 0;
+  text-decoration: none;
+}
+
+.nav__link--inside{
+  border-radius: 6px ;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.nav__link--inside:hover{
+  background: #F6F8FA;
+}
+
+.list{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0 16px 16px 0;
+  background: #fff;
+}
+
+.list__item{
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.list__item--click{
+  cursor: pointer;
+}
+
+.list__button{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.arrow .list__arrow{
+  transform: rotate(90deg);
+}
+
+.list__arrow{
+  margin-left: auto;
+  transition: transform .3s;
+}
+
+.list__show{
+  width: 80%;
+  margin-left: auto;
+  border-left: 2px solid #303440;
+  list-style: none;
+  transition: height .4s;
+  height: 0;
+}
+*/data-bs-toggle="modal"data-bs-target="#modal_1_id"
+id="btnCarrito"
+                                    data-bs-toggle="modal" data-bs-target="#idModal"
+ data-bs-target="#modalPublicar" data-bs-toggle="modal"
+                                    id="btnCargarProducto"
+
+																		/* MODAL Registrar */
+
+.modal_close{
+
+  background: #2d4263;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  
+  text-decoration: none;
+}
+
+.modal--show{
+  opacity: 1;
+  pointer-events: unset;
+}
+.registrate{
+  width: 500px;
+  padding: 20px;
+  background: white;
+  margin: auto;
+  margin-top: 50px;
+background-color: #ccc;
+  border-radius: 10px;
+}
+.padre{
+  padding:  20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: rgb(53, 72, 150);
+}
+label {
+  color: black;
+}
+.titulo{
+  text-align: center;
+
+  color: black;
+  padding: 10px;
+}
+p{
+  color: black;
+  
+}
+.cuenta{
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input{
+  color: black;
+  padding: 10px;
+
+}
+input:focus{
+  outline:  solid  #2d4263 2px;
+}
+.nombre, .apellido, .añoNacimiento, .dni, .celular, .mail, .clave{
+display: flex;
+flex-direction: column;  
+}
+.btnRegistrar{
+  background: #2d4263;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  text-size-adjust: 5px;
+
+}
+.btnRegistrar:hover{
+  background-color: #151f2e
+
+}
+
+.marcaProducto, .descripcionProducto , .precioProducto , .opcionCondicion, .modeloProducto, .condicionProducto .segmentoProducto, .descripcion, .cargaArchivo{
+  display: flex;
+  flex-direction: column;  
+  color: black;
+gap: 2px;
+text-align: justify;
+margin-bottom: 10px;
+  }
+ 
+.publicar{
+  border: #151f2e ;
+  border-style: outset 10px;
+  border-radius: 10px;
+}
+.publicar::before{
+  color: white;
+}
+
+    <!-- <div class="  registrate modal" id="modalPublicar">
+        <form action="" class=" formulario">
+
+            <h2 class="titulo">Publicar Producto</h2>
+            <div class="padre">
+
+                <div class="nombre">
+                    <label for="marca">Marca</label>
+                    <input type="text" id="marcaInput" name="marca" />
+                </div>
+
+                <div class="apellido">
+                    <label for="modelo">Modelo</label>
+                    <input type="text" id="modeloInput" name="modelo" />
+                </div>
+                <div class="añoNacimiento">
+                    <label for="condicion">Condicion</label>
+                    <input type="text" id="condicionInput" name="condicion" />
+                </div>
+                <div class="nombre">
+                    <label for="segmento">Segmento</label>
+                    <input type="text" id="segmentoInput" name="segmento" />
+                </div>
+                <div class="dni">
+                    <label for="precio">Precio</label>
+                    <input type="text" id="precioInput" name="precio" />
+                </div>
+
+                <div class="">
+                    <input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple />
+                </div>
+                <div class="cuenta">
+
+                    <input class="btnRegistrar" id="guardarProducto" type="button" value="Agregar">
+                    <input class="btnRegistrar" type="button"  value="Cancelar">
+                </div>
+
+            </div>
+    </div> -->
+
+		function cargarDatosUsuario (usuarios){
+
+  for(let userRegister of usuarios){
+
+    let nuevoUsuario= document.createElement(`div`)
+    nuevoUsuario.innerHTML = 
+                              ` 
+                              
+
+                              <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body"> 
+                                    <div class="">
+                                      <label for="">${userRegister.nombre}</label>
+                                      <input class="form-control" type="text" id="nombreInput" name="nombre" />
+                                  </div>
+                                  <div class="">
+                                    <label for="">${userRegister.apellido}</label>
+                                    <input type="text" class="form-control" id="modeloInput" name="apellido" />
+                                </div>
+                                <div class="">
+                                    <label for="">${userRegister.fechaNac}</label>
+                                    <input type="date" class="form-control"  id="nacimientoInput" name="condicion" />
+                                </div>
+                                <div class="">
+                                    <label for="">${userRegister.correoElectronico}</label>
+                                    <input type="text" class="form-control"  id="mailInput" name="correo electronico" />
+                                </div>
+                                <div class="">
+                                    <label for="">${userRegister.telefono}/label>
+                                    <input type="tel" class="form-control"  id="telefonoInput" name="telefono contacto" />
+                                </div>
+                                <div class="">
+                                  <label for="">${userRegister.clave}</label>
+                                  <input type="password" class="form-control"  id="claveInput" name="contraseña" />
+                              </div>
+                                <div class="mt-3">
+                                    <input type="file" class="form-control"  name="adjunto" accept=".pdf,.jpg,.png" multiple />
+                                </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary " id="btnRegistrar" data-bs-dismiss="modal">Registrar</button>
+                                    <button type="button" data-bs-dismiss="modal" class="btn btn-success"
+                                        id="btnFinalizarCompra">Cancelar</button>
+                                </div>
+                                </div>
+                              </div>
+                              </div>
+                               
+                           `
+
+                                // divRegister.appendChild(nuevoUsuario)
+
+  }
+
+  }
+cargarDatosUsuario(listaUsuarios)

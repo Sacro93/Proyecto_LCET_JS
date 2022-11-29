@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lo Compramos entre Todos</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./estetica.css">
+</head>
+
+<body class="container-fluid">
+	<!--<header class="p-3 text-bg-dark">
+		<div class="container">
+			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+				<a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+					<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+						<use xlink:href="#bootstrap"></use>
+					</svg>
+				</a>
+
+				<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+					<li><a href="./paginas/index.html" class="nav-link px-2 text-secondary">Inicio</a></li>
+					<li><a href="./paginas/productos.html" class="nav-link px-2 text-secondary">Productos</a></li>
+					<li><a href="./paginas/perfil.html" class="nav-link px-2 text-white">Nosotros</a></li>
+					<li><a href="./paginas/carrito.html" class="nav-link px-2 text-white">Contactanos</a></li>
+				</ul>
+
+				<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+					<input id="btnBuscar"type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+						aria-label="Search">
+				</form>
+
+				<div class="text-end">
+					<button id="botonInicioSesion" data-bs-toggle="modal" data-bs-target="#inicioSesion" type="button"
+						class="btn btn-outline-light me-2">Registrar</button>
+					<button id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModal" type="button"
+						class="btn btn-warning">Carrito</button>
+						<button id="botonPublicar" data-bs-toggle="modal" data-bs-target="#idPublicar" type="button"
+						class="btn gap-1 btn-warning">Publicar</button>
+				</div>
+				<div class="container m-4">
+
+
+					< Probanto BTN DARK MODE -->
+					<div class="row">
+						<div class="col-3">
+							<button id="botonDarkMode" class="btn btn-dark">Dark Mode</button>
+						</div>
+						<div class="col-3">
+							<button id="botonLightMode" class="btn btn-light">Blue Mode</button>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="">
+		<div class=" mt-5">
+			<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner text-center ">
+					<div class="carousel-item active" data-bs-interval="10000">
+						<img class=" rounded mx-auto d-block img-fluid" src="./imagenes/publicidad/experiencias.jpg"
+							alt="...">
+					</div>
+					<div class="carousel-item" data-bs-interval="2000">
+						<img class="  rounded mx-auto d-block img-fluid"
+							src="./imagenes/publicidad/vender-por-internet-desde-cero.png" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img class=" rounded mx-auto d-block img-fluid" src="./imagenes/publicidad/sales.jpg" alt="...">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+					data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+					data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+
+		//modal CARRITO-->
+		<!-- <div class="modal" id="idModal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Carrito de compras/h5>
+
+					</div>
+					<div class="modal-body">
+						<p>Modal body text goes here.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn btn-primary" id="botonFinalizarCompra">Finalizar
+							compra</button>
+
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+		 <!-- MODAL Registrar  //no puedo ponerlo en el centro de la pagina--> 
+		  <div class=" registrate "  >
+			<form action="" class="formulario">
+				<button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+			  <h2 class="titulo">REGISTRAR</h2>
+			  <div class="padre">
+	
+				<div class="nombre">
+				  <label for="">Nombre</label>
+				  <input type="text" />
+				</div>
+	
+				<div class="apellido">
+				  <label for="">Apellido</label>
+				  <input type="text" />
+				</div>
+				<div class="añoNacimiento">
+				  <label for="">Año de Nacimiento</label>
+				  <input type="text" />
+				</div>
+				<div class="dni">
+				  <label for="">DNI</label>
+				  <input type="text" />
+				</div>
+				<div class="celular">
+				  <label for="">Telefono Celular</label>
+				  <input type="text" />
+				</div>
+				<div class="mail">
+				  <label for="">Correo electronico</label>
+				  <input type="text" />
+				</div>
+				<div class="clave">
+				  <label for="">Contraseña</label>
+				   <input type="password" /> 
+				</div>
+				<div class="cuenta">
+				  <p> ¿Ya tienes una cuenta? <a class="link" href="#">Ingresa</a></p>
+				  <input class="btnRegistrar" type="button" value="Registrar">
+				</div>
+	
+			  </div>
+		  </div> 
+		  </div>
+		  </form>
+
+		  <!-- MODALCarga de producto en perfil//no puedo ponerlo en el centro de la pagina y no almacena imagenes 
+		  <div class="registrate  "   id="idPublicar">
+			<form action="" class="formulario">
+			  <h1 class="titulo">Publica tu producto</h1>
+			  <div class="padre">
+	
+				<div class="marcaProducto">
+				  <label for="marca">Marca</label>
+				  <input name="marca" id="marcaInput" type="text" />
+				</div>
+				<div class="modeloProducto">
+				  <label for="modelo">Modelo</label>
+				  <input name="modelo" id="modeloInput" type="text" />
+				</div>
+	
+				<div class="opcionCondicion">
+				  <p>Indique Condicion </p>
+				  <div>
+					<label for="nuevo">Nuevo</label>
+					<input type="radio" name="nuevo" id="condicionInput">
+				  </div>
+				  <div>
+					<label for="usado">Usado</label>
+					<input type="radio" name="usado" id="condicionInput">
+				  </div>
+				</div>
+	
+				<div class="precioProducto">
+				  <label for="precio">Indique el precio</label>
+				  <input id="precioInput" name="precio" type="text" />
+				</div>
+				<div class="descripcionProducto">
+				  <p>Descripcion del Producto</p>
+				  <input type="text" id="descripcionInput" name="descripcionProducto"
+					placeholder="Descripcion breve del producto">
+				</div>
+				<div class="options">
+				  <p class="mb-2">Indique Segmento</p>
+				  <div>
+					<label for="tecnologia">Tecnologia</label>
+					<input id="segmentoInput" type="checkbox" name="tecnologia" >
+				  </div>
+				  <div>
+					<label for="deco & hogar">Deco & Hogar</label>
+					<input id="segmentoInput" type="checkbox" name="deco & hogar" >
+				  </div>
+				  <div>
+					<label for="indumentaria">Indumentaria</label>
+					<input id="segmentoInput" type="checkbox" name="indumentaria" >
+				  </div>
+				  <div>
+					<label for="perfumes">Perfumeria</label>
+					<input type="checkbox" name="perfumes" id="segmentoInput">
+				  </div>
+				</div>
+			  </div>
+			</form>
+			  <div class="publicar">
+				<button id="btnPublicar">Publicar Producto</button>
+			  </div>
+	
+		  </div>--> 
+		  
+
+
+
+
+<!-- Productos cargados -->
+		<div class="container">
+			<div id="productos" class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-5"></div>
+
+		</div>
+	</main>
+	<!-- }falta modificar  -->
+	<footer class="py-3 my-4"> 
+		<ul class="nav justify-content-center border-bottom pb-3 mb-3">
+		  <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+		  <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+		  <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+		  <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+		  <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+		</ul>
+		<p class="text-center text-muted">© 2022 Company, Inc</p>
+	  </footer>
+	<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="./index.js"></script>
+</body>
+
+</html>

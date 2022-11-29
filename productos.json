@@ -1,0 +1,85 @@
+[
+{
+ "id":1,
+"marca":"Sony",
+"modelo":  "Play Station 5",
+"condicion":"usado",
+"segmento":"tecnologia",
+"precio": 400000,
+"imagen":"play5.jpg"
+},
+{
+  
+    "id" :2,
+    "marca":"Samsung",
+    "modelo":"Smart TV 50` 4k Serie 8",
+    "condicion":"usado",
+    "segmento":"tecnologia",
+    "precio": 150000,
+    "imagen": "smart_tv.jpeg"
+},
+{
+    "id" :3,
+    "marca":"Apple",
+    "modelo": "Iphone 13 Pro MAX",
+    "condicion":"nuevo",
+    "segmento":"tecnologia",
+    "precio":  652000,
+    "imagen": "iphone_14.jpg"
+},
+{
+"id":4,
+"marca":"Oster",
+"modelo":"Cafetera Mod.620 plus",
+"condicion":"nuevo",
+"segmento":"Electrodomesticos",
+"precio":44000,
+"imagen":"cafetera.jpeg"
+},
+{
+    "id":5,
+    "marca":"ATMA",
+    "modelo":"Horno Electrico 40 Lts. c/grill",
+    "condicion":"nuevo",
+    "segmento":"Electrodomesticos",
+    "precio":28000,
+    "imagen":"horno_electrico.jpg"
+},
+{"id": 6,
+"marca":"Samsung",
+"modelo":"lavarropas Aut.9kg WF1904",
+"condicion":"nuevo",
+"segmento":"Electrodomesticos",
+"precio": 180000,
+"imagen":"lavarropas_samsung.jpeg"
+},
+{
+    "id": 7,
+    "marca":"Placard Rivadavia",
+    "modelo":"Delta 2P. 2x.1.4 mts",
+    "condicion":"nuevo",
+    "segmento": "Hogar y Muebles",
+    "precio":55000,
+    "imagen": "placard.jpg"
+},
+{
+    "id":8,
+    "marca":" Microsoft",
+    "modelo":"Xbox 360",
+    "condicion":"nuevo",
+    "segmento":"tecnologia",
+    "precio":49300,
+    "imagen":"consola_2.jpg"
+},
+{
+    "id":9,
+    "marca":"Sillon Esquinero",
+    "modelo":"Sofa 3C. 1.8m x 0.9m ",
+    "condicion":  "nuevo",
+    "segmento": "Hogar y Muebles",
+    "precio":62800,
+    "imagen":"sillon.jpg"
+}
+
+
+]
