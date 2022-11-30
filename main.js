@@ -92,7 +92,7 @@ let btnCarrito = document.getElementById("btnCarrito");
 
 let btnRegistrarUsuario = document.getElementById("btnRegistrar");
 
-let divUsuariosRegistrados = document.getElementById("usuariosRegistrados");
+// let divUsuariosRegistrados = document.getElementById("usuariosRegistrados");
 
 let btnFinalizarCompra = document.getElementById("btnFinalizarCompra");
 
@@ -113,6 +113,10 @@ btnCarrito.addEventListener("click", () => {
 btnRegistrarUsuario.addEventListener("click", () => {
   registrarCliente(listaUsuarios);
 });
+
+// btnMostrarUsuarios.addEventListener("click" ,()=> {
+//   mostrarListado
+// })
 
 btnFinalizarCompra.addEventListener("click", () => {
   finalizarCompra();
