@@ -13,31 +13,35 @@
 </head>
 
 <body class=" p-2 text-dark  ">
-  
-    <nav class="navbar navbar-expand-md  shadow-lg ">
-      <div class="container-fluid">
-        <button type="button" class=" navbar-toggler btn me-2 btn-disabled" data-bs-toggle="collapse"
-          data-bs-target="#MenuNavegacion">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a href="index.html"> <img class="navbar-brand container-fluid logo" src="./imagenes/logo/logo_1.jpg" width=""
-            alt="logo"></a>
-        <div id="MenuNavegacion" class="collapse navbar-collapse justify-content-center ">
-          <ul class="navbar-nav d-flex fw-bold align-items-center fs-5 gap-4">
-            <li class="nav-item"><a class="nav-link btn " data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Clientes </a> </li>
-            <li><a class="nav-link btn " data-bs-target="#modalPublicar" data-bs-toggle="modal" id="btnCargarProducto"
-                href="#">Agregar producto</a> </li>
-            <li class="nav-item"><a class="nav-link btn " href="#" data-bs-toggle="modal"
-                data-bs-target="#modalRegistrate">Registrate</a></li>
-            <li class="nav-item"><a class="nav-link btn  " href="#" id="btnCarrito" data-bs-toggle="modal"
-                data-bs-target="#idModal">Carrito</a>
-              <a href="https://www.flaticon.es/iconos-gratis/anadir-al-carrito" title="añadir al carrito iconos"></a>
-          </ul>
-        </div>
+
+  <nav class="navbar navbar-expand-md  shadow-lg ">
+    <div class="container-fluid">
+      <button type="button" class=" navbar-toggler btn me-2 btn-disabled" data-bs-toggle="collapse"
+        data-bs-target="#MenuNavegacion">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="index.html"> <img class="navbar-brand container-fluid logo" src="./imagenes/logo/logo_1.jpg" width=""
+          alt="logo"></a>
+      <div id="MenuNavegacion" class="collapse navbar-collapse justify-content-center ">
+        <ul class="navbar-nav d-flex fw-bold align-items-center fs-5 gap-4">
+          <li class="nav-item"><a class="nav-link btn " data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+              aria-controls="offcanvasScrolling">Clientes </a> </li>
+          <li><a class="nav-link btn " data-bs-target="#modalPublicar" data-bs-toggle="modal" id="btnCargarProducto"
+              href="#">Agregar producto</a> </li>
+          <li class="nav-item"><a class="nav-link btn " href="#" data-bs-toggle="modal"
+              data-bs-target="#modalRegistrate">Registrate</a></li>
+          <li class="nav-item"><a class="nav-link btn  " href="#" id="btnCarrito" data-bs-toggle="modal"
+              data-bs-target="#idModal">Carrito</a>
+            <a href="https://www.flaticon.es/iconos-gratis/anadir-al-carrito" title="añadir al carrito iconos"></a>
+
+
+          <li class="nav-item btn btn-outline-dark" id="mayorPrecio">Ordenar Mayor Valor</li>
+        </ul>
       </div>
-    </nav>
- 
+    </div>
+
+  </nav>
+
 
 
 
@@ -52,8 +56,8 @@
         <div class="modal-body" id="modal-body">
         </div>
         <div class="row-ml-auto">
-          <h5 class="list-group-item"id="precioTotal"></h5>
-         
+          <h5 class="list-group-item" id="precioTotal"></h5>
+
         </div>
 
         <div class="modal-footer">
@@ -178,10 +182,10 @@
     </div>
 
     <!-- productos -->
-   <div class="container">
-      <div id="productosCatalogo" class=" py-3  row row-cols-md-3 g-3 ">   
+    <div class="container">
+      <div id="productosCatalogo" class=" py-3  row row-cols-md-3 g-3 ">
       </div>
-  </div>
+    </div>
 
     <!-- CANVAS CON DATOS DE CLIENTES -->
 
@@ -201,8 +205,13 @@
     </div>
 
   </main>
-<!-- 
-  <footer class="pie-pagina  shadow-lg">
+
+
+
+
+
+<!--   
+  <footer class="pie-pagina shadow-lg">
     <div class="contenido1 ">
       <div class="cajita">
         <a href="#">
