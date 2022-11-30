@@ -11,33 +11,28 @@
   <link rel="stylesheet" href="./estetica.css">
 
 </head>
-
-<body class=" p-2 text-dark  ">
-
+<body class=" p-2  ">
   <nav class="navbar navbar-expand-md  shadow-lg ">
     <div class="container-fluid">
       <button type="button" class=" navbar-toggler btn me-2 btn-disabled" data-bs-toggle="collapse"
         data-bs-target="#MenuNavegacion">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a href="index.html"> <img class="navbar-brand container-fluid logo" src="./imagenes/logo/logo_1.jpg" width=""
-          alt="logo"></a>
-
+      <!-- <a href="index.html"> <img class="navbar-brand  logo" src="./imagenes/logo/logo_1.jpg" width=""
+          alt="logo"></a> -->
       <div id="MenuNavegacion" class="collapse navbar-collapse justify-content-center ">
         <ul class="navbar-nav d-flex fw-bold align-items-center fs-5 gap-4">
 
-
-          <li><a class="nav-link btn " data-bs-target="#modalPublicar" data-bs-toggle="modal" id="btnCargarProducto"
+          <li><a class="nav-link btn text-light" data-bs-target="#modalPublicar" data-bs-toggle="modal" id="btnCargarProducto"
               href="#">Agregar producto</a> </li>
 
-          <li class="nav-item"><a class="nav-link btn " href="#" data-bs-toggle="modal"
+          <li class="nav-item"><a class="nav-link btn text-light" href="#" data-bs-toggle="modal"
               data-bs-target="#modalRegistrate">Registrate</a></li>
 
-          <li class="nav-item"><a class="nav-link btn  " href="#" id="btnCarrito" data-bs-toggle="modal"
+          <li class="nav-item"><a class="nav-link btn text-light " href="#" id="btnCarrito" data-bs-toggle="modal"
               data-bs-target="#idModal">Carrito</a>
             
-
-          <li class="nav-item btn nav-link btn" id="mayorPrecio">Ordenar Mayor Valor</li>
+          <li class="nav-item  nav-link text-light " id="mayorPrecio">Ordenar Mayor Valor</li>
         </ul>
       </div>
     </div>
@@ -169,33 +164,30 @@
 
   <!-- catalogo de productos resumido y redes -->
   <main class=" ">
-    <div class="position-relative  text-center bg-light">
-      <div class="col-md-5 p-lg-5 m-auto">
-        <h1 class="display-5 ">Bienvenidos</h1>
-        <img src="/imagenes/publicidad/experiencias.jpg" width="500px" alt="">
-        <p class="lead fw-normal">Somos una comunidad en crecimiento,forma parte! </p>
-        
+    <div class="redes containermt-5">
+      <a href="https://es-la.facebook.com/"><img src="./imagenes/redes/facebook.png" class="iconos" alt="facebook"></a>
+      <a href="https://www.instagram.com/"><img src="./imagenes/redes/instagram.png" class="iconos " alt="instagram"></a>
+      <a href="https://www.whatsapp.com/"><img src="./imagenes/redes/whatsapp.png" class=" iconos " alt="whatsapp"></a>
+      <a href="https://www.outlook.com"><img src="./imagenes/redes/gmail.png" class="iconos " alt="gmail"></a>
+    </div>
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light fondo">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 fw-normal text-light">Bienvenidos</h1>
+        <p class="lead fw-normal text-light">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+        <a class="btn text-light btn-outline-secondary" href="#">Conocenos</a>
       </div>
       <div class="product-device shadow-sm d-none d-md-block"></div>
       <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
     </div>
-    <div class="redes containermt-5">
-      <a href="https://es-la.facebook.com/"><img src="/imagenes/redes/facebook.png" class="iconos" alt="facebook"></a>
-      <a href="https://www.instagram.com/"><img src="/imagenes/redes/instagram.png" class="iconos " alt="instagram"></a>
-      <a href="https://www.whatsapp.com/"><img src="/imagenes/redes/whatsapp.png" class=" iconos " alt="whatsapp"></a>
-      <a href="https://www.outlook.com"><img src="/imagenes/redes/gmail.png" class="iconos " alt="gmail"></a>
-    </div>
-
     <!-- productos -->
     <div class="container">
       <div id="productosCatalogo" class=" py-3  row row-cols-md-3 g-3 ">
       </div>
     </div>
 
-  </main>
+</main>
 
-
-  <div class="container">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
@@ -206,9 +198,6 @@
       </ul>
       <p class="text-center text-muted">© 2022 Company, Inc</p>
     </footer>
-  </div>
-
-
 
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

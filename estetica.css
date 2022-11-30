@@ -1,13 +1,5 @@
 
-*{
-  margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Open Sans", sans-serif;
 
-  
- 
-}
 a {
   text-decoration: none;
 
@@ -21,11 +13,18 @@ header{
 }
 body{
  
-  background: -webkit-linear-gradient(to right, #000428, #004e92); 
-  background: linear-gradient(to right, #000428, #004e92); 
+  /* background: -webkit-linear-gradient(to right, #000428, #004e92); 
+  background: linear-gradient(to right, #000428, #004e92);  */
+  /* background: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
+  /* background: -webkit-linear-gradient(to right, #141e30, #243b55);
+  background: linear-gradient(to right, #141e30, #243b55);  */
+
+background: -webkit-linear-gradient(to right, #434343, #000000);  
+background: linear-gradient(to right, #434343, #000000); 
+
 }
 .logo{
-  width: 100px;
+  width: 70px;
 }
 
 
@@ -42,6 +41,11 @@ body{
   zoom: 1.8;
  
  }
+
+.fondo{
+background-image: url(/5073414.jpg);
+
+}
 
 /* 
 redes fixed  */
