@@ -100,6 +100,7 @@ let divCompra = document.getElementById("precioTotal");
 
 let mayor = document.getElementById("mayorPrecio");
 
+
 //***************************Eventos *******************************//
 
 btnGuardarProducto.addEventListener("click", () => {
@@ -257,8 +258,8 @@ mostrarUsuariosRegistrados(listaUsuarios);
 function agregarAlCarrito(producto) {
   let productoAgregadoCarrito = productosEnCarrito.find(
     (art) => art.id === producto.id
-  );
-  if (productoAgregadoCarrito == undefined) {
+  );  
+  if (productoAgregadoCarrito != undefined ) {
     productosEnCarrito.push(producto);
     localStorage.setItem("carrito", JSON.stringify(productosEnCarrito));
     Swal.fire({
@@ -268,15 +269,16 @@ function agregarAlCarrito(producto) {
       timer: 800,
       text: `Producto ${producto.modelo} agregado`,
     });
-  } else {
+  }
+    else 
     Swal.fire({
       title: "Producto ya en carrito",
       icon: "warning",
-      confirmButtonText: "Entendido",
+     confirmButtonText: "Entendido",
       timer: 1000,
-    });
+   });
   }
-}
+
 
 //function calcular total
 function compraTotal(array) {
@@ -312,7 +314,11 @@ function cargarProductosCarrito(array) {
                         productoCarrito.precio / tickets
                       }</p>
 			<div class=" d-flex justify-content-center">
-                      <button class="btn btn-danger" id="botonEliminar${
+       <button class="btn btn-primary" id="botonSumarProductoCarrito"><i class="fas fa-trash-alt">+</i></button>
+     
+                
+      
+      <button class="btn btn-danger" id="botonEliminar${
                         productoCarrito.id
                       }"><i class="fas fa-trash-alt">Eliminar</i></button>
 			</div>
@@ -394,3 +400,5 @@ function finalizarCompra() {
     }
   });
 }
+
+
