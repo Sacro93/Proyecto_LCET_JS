@@ -100,7 +100,6 @@ let divCompra = document.getElementById("precioTotal");
 
 let mayor = document.getElementById("mayorPrecio");
 
-
 //***************************Eventos *******************************//
 
 btnGuardarProducto.addEventListener("click", () => {
@@ -258,8 +257,8 @@ mostrarUsuariosRegistrados(listaUsuarios);
 function agregarAlCarrito(producto) {
   let productoAgregadoCarrito = productosEnCarrito.find(
     (art) => art.id === producto.id
-  );  
-  if (productoAgregadoCarrito != undefined ) {
+  );
+  if (1) {
     productosEnCarrito.push(producto);
     localStorage.setItem("carrito", JSON.stringify(productosEnCarrito));
     Swal.fire({
@@ -269,16 +268,15 @@ function agregarAlCarrito(producto) {
       timer: 800,
       text: `Producto ${producto.modelo} agregado`,
     });
-  }
-    else 
-    Swal.fire({
-      title: "Producto ya en carrito",
-      icon: "warning",
-     confirmButtonText: "Entendido",
-      timer: 1000,
-   });
-  }
-
+  } 
+//   else
+//     Swal.fire({
+//       title: "Producto ya en carrito",
+//       icon: "warning",
+//       confirmButtonText: "Entendido",
+//       timer: 1000,
+//     });
+}
 
 //function calcular total
 function compraTotal(array) {
@@ -319,8 +317,8 @@ function cargarProductosCarrito(array) {
                 
       
       <button class="btn btn-danger" id="botonEliminar${
-                        productoCarrito.id
-                      }"><i class="fas fa-trash-alt">Eliminar</i></button>
+        productoCarrito.id
+      }"><i class="fas fa-trash-alt">Eliminar</i></button>
 			</div>
                       </div>
                       </div>`;
@@ -330,14 +328,17 @@ function cargarProductosCarrito(array) {
     document
       .getElementById(`botonEliminar${productoCarrito.id}`)
       .addEventListener("click", () => {
-        //**************Eliminar del DOM*******//
+
+
+
+      				  //**************Eliminar del DOM*******//
 
         let cardProducto = document.getElementById(
           `productoCarrito${productoCarrito.id}`
         );
         cardProducto.remove();
 
-        //**********Eliminar del array comprar*******//
+       						 //**********Eliminar del array comprar*******//
         let productoEliminar = array.find(
           (articulo) => articulo.id === productoCarrito.id
         );
@@ -400,5 +401,3 @@ function finalizarCompra() {
     }
   });
 }
-
-
