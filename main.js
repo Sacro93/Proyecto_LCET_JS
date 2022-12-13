@@ -82,13 +82,15 @@ if (localStorage.getItem("listaUsuarios")) {
 }
 
 //*************************************Capturar DOM*****************//
-let divProductos = document.getElementById("productosCatalogo");
 
-let btnGuardarProducto = document.getElementById("guardarProducto");
 
-let modalBody = document.getElementById("modal-body");
+let productosOfrecidos = document.getElementById("productosOfrecidos");
 
-let btnCarrito = document.getElementById("btnCarrito");
+let publicar = document.getElementById("publicar");
+
+let articuloEnCarrito = document.getElementById("articuloEnCarrito");
+
+let botnCarrito = document.getElementById("btnCarrito");
 
 let btnRegistrarUsuario = document.getElementById("btnRegistrar");
 
@@ -102,12 +104,12 @@ let mayor = document.getElementById("mayorPrecio");
 
 //***************************Eventos *******************************//
 
-btnGuardarProducto.addEventListener("click", () => {
+publicar.addEventListener("click", () => {
   crearProducto(catalogo);
 });
 
 btnCarrito.addEventListener("click", () => {
-  cargarProductosCarrito(productosEnCarrito);
+	mostrarArticuloEnCarrito(productosEnCarrito);
 });
 
 btnRegistrarUsuario.addEventListener("click", () => {
@@ -126,57 +128,59 @@ mayor.addEventListener("click", () => {
   ordenarPorPrecio(catalogo);
 });
 
-//***************************FUNCTION MOSTRAR CATALOGO PUBLICADO ********************************//
+//***************************FUNCTION MOSTRAR CATALOGO  ********************************//
 
 let tickets = 200;
 
-function mostrarProductosCatalogo(array) {
-  divProductos.innerHTML = "";
-  for (let producto of array) {
-    let nuevoProducto = document.createElement("div");
+function articulosEnPantalla(descripcion) {
 
-    nuevoProducto.innerHTML = ` <div class="card align-items-center border border-3 border-white" style="width: 17rem;">
+	productosOfrecidos.innerHTML = "";
+
+  for (let articulo of descripcion) {
+    let cardProducto = document.createElement("div");
+
+    cardProducto.innerHTML = ` <div class="card align-items-center border border-3 border-white" style="width: 17rem;">
                              <img src="../imagenes/productos/${
-                               producto.imagen
+                               articulo.imagen
                              }" class=" imagenesCard d-flex  alt="...">
 							 <div class="card-body">
                           		<div class="list-group list-group-flush">
 
                               <h4 class="list-group-item fw-semibold  text-center ">${
-                                producto.marca
+                                articulo.marca
                               }</h4>
 
                               <h5 class="list-group-item fw-semibold  text-center">${
-                                producto.modelo
+                                articulo.modelo
                               }</h5>
 
                               <p class="list-group-item fw-semibold  text-center ">Condicion:  ${
-                                producto.condicion
+                                articulo.condicion
                               }</p>
 
                              <p class="list-group-item fw-semibold text-center ">  Valor de Cuotaparte: $${
-                               producto.precio / tickets
+                               articulo.precio / tickets
                              }</p>
 
                               <a href="#" id= "agregarBtn${
-                                producto.id
+                                articulo.id
                               }" class="btn btn-outline-dark">Agregar</a> </div>
 							 
                              </div>
 							 </div>`;
-    divProductos.appendChild(nuevoProducto);
+	 productosOfrecidos.appendChild(cardProducto);
 
-    let bntAgregar = document.getElementById(`agregarBtn${producto.id}`);
+    let bntAgregar = document.getElementById(`agregarBtn${articulo.id}`);
     bntAgregar.addEventListener("click", () => {
-      agregarAlCarrito(producto);
+      agregarAlCarrito(articulo);
     });
   }
 }
-mostrarProductosCatalogo(catalogo);
+articulosEnPantalla(catalogo);
 
 //***************************Function agregar producto desde Perfil  al menu*******************************//
 
-function crearProducto(nuevo) {
+function crearProducto(nuevoProducto) {
   let inputMarca = document.getElementById("marcaInput");
   let inputModelo = document.getElementById("modeloInput");
   let inputCondicion = document.getElementById("condicionInput");
@@ -191,9 +195,9 @@ function crearProducto(nuevo) {
     parseInt(inputPrecio.value),
     "cafetera.jpeg"
   );
-  nuevo.push(productoCreado);
-  localStorage.setItem("catalogo", JSON.stringify(nuevo));
-  mostrarProductosCatalogo(nuevo);
+  nuevoProducto.push(productoCreado);
+  localStorage.setItem("catalogo", JSON.stringify(nuevoProducto));
+  articulosEnPantalla(nuevoProducto);
 
   inputMarca.value = "";
   inputModelo.value = "";
@@ -255,7 +259,7 @@ mostrarUsuariosRegistrados(listaUsuarios);
 //***************************Function agregar producto al carrito  *******************************//
 
 function agregarAlCarrito(producto) {
-  let productoAgregadoCarrito = productosEnCarrito.find(
+   productosEnCarrito.find(
     (art) => art.id === producto.id
   );
   if (1) {
@@ -292,10 +296,12 @@ function compraTotal(array) {
 
 //*************funcion mostrar producto  en modal************/
 
-function cargarProductosCarrito(array) {
-  modalBody.innerHTML = "";
-  array.forEach((productoCarrito) => {
-    modalBody.innerHTML += `<div class="card border-dark mb-1 container-fluid " id="productoCarrito${
+function mostrarArticuloEnCarrito(detalles) {
+
+	articuloEnCarrito.innerHTML = "";
+
+	detalles.forEach((productoCarrito) => {
+    articuloEnCarrito.innerHTML += `<div class="card border-dark mb-1 container-fluid " id="productoCarrito${
       productoCarrito.id
     }" style="max-width: 300px;">
                       <img class="card-img-top" heigth="100px"  src="../imagenes/productos/${
