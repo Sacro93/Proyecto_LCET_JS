@@ -49,18 +49,24 @@ const articulosPublicados = async () => {
 if (localStorage.getItem("catalogo")) {
   catalogo = JSON.parse(localStorage.getItem("catalogo"));
 } else {
-	articulosPublicados();
+  articulosPublicados();
 }
 
 ///************productos en Carrito**************///
 
-let productoAComprar = [];
+let carrito = [];
 
-if (localStorage.getItem("carrito")) {
-  productoAComprar = JSON.parse(localStorage.getItem("carrito"));
-} else {
-  localStorage.setItem("carrito", JSON.stringify(productoAComprar));
+document.addEventListener('DOMContentLoaded',()=>{
+
+if(localStorage.getItem('carrito')){
+	carrito= JSON.parse(localStorage.getItem('carrito'))
+
+	actualizarCarrito()
 }
+
+
+})
+
 
 ///************Lista usuario**************///
 
@@ -84,19 +90,17 @@ if (localStorage.getItem("listaUsuarios")) {
 //*************************************Capturar DOM*****************//
 let productosPublicados = document.getElementById("productosPublicados");
 
-let btnGuardarProducto = document.getElementById("guardarProducto");
+let contenedorCarrito = document.getElementById("carrito-contenedor");
 
-let cardArticulo = document.getElementById("cardArticulo");
+let btnGuardarProducto = document.getElementById("guardarProducto");
 
 let btnCarrito = document.getElementById("btnCarrito");
 
 let btnRegistrarUsuario = document.getElementById("btnRegistrar");
 
-// let divUsuariosRegistrados = document.getElementById("usuariosRegistrados");
-
 let btnFinalizarCompra = document.getElementById("btnFinalizarCompra");
 
-let divCompra = document.getElementById("precioTotal");
+let precioTotal = document.getElementById("precioTotal");
 
 let mayorPrecio = document.getElementById("mayorPrecio");
 
@@ -106,17 +110,9 @@ btnGuardarProducto.addEventListener("click", () => {
   crearProducto(catalogo);
 });
 
-btnCarrito.addEventListener("click", () => {
-  cargarProductosCarrito(productoAComprar);
-});
-
 btnRegistrarUsuario.addEventListener("click", () => {
   registrarCliente(listaUsuarios);
 });
-
-// btnMostrarUsuarios.addEventListener("click" ,()=> {
-//   mostrarListado
-// })
 
 btnFinalizarCompra.addEventListener("click", () => {
   finalizarCompra();
@@ -128,51 +124,104 @@ mayorPrecio.addEventListener("click", () => {
 
 //***************************FUNCTION MOSTRAR CATALOGO PUBLICADO ********************************//
 
+//Storage Carrito
+
+
+
+
 let tickets = 200;
 
-function productosPagina(detallesProducto) {
-	productosPublicados.innerHTML = "";
-  for (let producto of detallesProducto) {
-    let nuevoProducto = document.createElement("div");
+catalogo.forEach((producto) => {
+  const div = document.createElement("div");
+  div.classList.add("producto");
+  div.innerHTML = ` <div class="card align-items-center border border-3 border-white" style="width: 17rem;">
+                                <img src="../imagenes/productos/${
+                                  producto.imagen
+                                }" class=" imagenesCard d-flex  alt="...">
+   							 <div class="card-body">
+                             		<div class="list-group list-group-flush">
+                                   <h4 class="list-group-item fw-semibold  text-center ">${
+                                     producto.marca
+                                   }</h4>
+                                   <h5 class="list-group-item fw-semibold  text-center">${
+                                     producto.modelo
+                                   }</h5>
+                                   <p class="list-group-item fw-semibold  text-center ">Condicion:  ${
+                                     producto.condicion
+                                   }</p>
+                                  <p class="list-group-item fw-semibold text-center ">  Valor de Cuotaparte: $${
+                                    producto.precio / tickets
+                                  }</p>
+                                   <a href="#" id= "agregarBtn${
+                                     producto.id
+                                   }" class="btn btn-outline-dark">Agregar</a> </div>
+               
+                                </div>`;
+  productosPublicados.appendChild(div);
 
-    nuevoProducto.innerHTML = ` <div class="card align-items-center border border-3 border-white" style="width: 17rem;">
-                             <img src="../imagenes/productos/${
-                               producto.imagen
-                             }" class=" imagenesCard d-flex  alt="...">
-							 <div class="card-body">
-                          		<div class="list-group list-group-flush">
+  const botonAgregarCarrito = document.getElementById(
+    `agregarBtn${producto.id}`
+  );
+  botonAgregarCarrito.addEventListener("click", () => {
+    agregarAlCarrito(producto.id);
+  });
+});
 
-                              <h4 class="list-group-item fw-semibold  text-center ">${
-                                producto.marca
-                              }</h4>
+/** agregar al carrito */
 
-                              <h5 class="list-group-item fw-semibold  text-center">${
-                                producto.modelo
-                              }</h5>
+const agregarAlCarrito = (prodId) => {
+  const item = catalogo.find((prod) => prod.id === prodId);
+  carrito.push(item);
+  actualizarCarrito()
+ 
+  
+};
 
-                              <p class="list-group-item fw-semibold  text-center ">Condicion:  ${
-                                producto.condicion
-                              }</p>
+const eliminarDelCarrito= (prodId)=>{
+const item=carrito.find((prod) => prod.id === prodId)
+const indice=carrito.indexOf(item)
+carrito.splice(indice,1)
+actualizarCarrito()
 
-                             <p class="list-group-item fw-semibold text-center ">  Valor de Cuotaparte: $${
-                               producto.precio / tickets
-                             }</p>
-
-                              <a href="#" id= "agregarBtn${
-                                producto.id
-                              }" class="btn btn-outline-dark">Agregar</a> </div>
-							 
-                             </div>
-							 </div>`;
-							 productosPublicados.appendChild(nuevoProducto);
-
-    let bntAgregar = document.getElementById(`agregarBtn${producto.id}`);
-    bntAgregar.addEventListener("click", () => {
-      agregarAlCarrito(producto);
-    });
-  }
 }
-productosPagina(catalogo);
+
+const actualizarCarrito = () => {
+	contenedorCarrito.innerHTML=""
+  carrito.forEach((articulo) => {
+    const div = document.createElement("div");
+    div.innerHTML = `<div class="card border-dark mb-1 container-fluid " id="productoCarrito${
+      articulo.id
+    }" style="max-width: 300px;">
+	                       <img class="card-img-top" heigth="150px"  src="../imagenes/productos/${
+                           articulo.imagen
+                         }" alt="${articulo.nombre}">
+	                       <div class="card-body ">
+	                       <h3 class="list-group-item text-center">${
+                           articulo.marca
+                         }</h3>
+	                       <h4 class="list-group-item text-center">${
+                           articulo.modelo
+                         }</h4>
+	                       <p class="card-text  text-center"> Precio cuotaparte $${
+                           articulo.precio / tickets
+                         }</p>
+	 			<div class=" d-flex justify-content-center">
+	        
+<button onclick="eliminarDelCarrito(${articulo.id})" class="btn btn btn-danger" ><i >Eliminar</button>
+	 			</div>
+	                       </div>
+	                       </div>`;
+						   contenedorCarrito.appendChild(div)
+
+						   localStorage.setItem('carrito', JSON.stringify(carrito))
+
+						
+  });
+
+  precioTotal.innerText= carrito.reduce((acc, producto)=> acc+ producto.precio/tickets,0)
+};
+
+
 
 //***************************Function agregar producto desde Perfil  al menu*******************************//
 
@@ -232,6 +281,8 @@ function registrarCliente(nuevoCliente) {
   inputClave.value = "";
 }
 
+
+
 //***********************MOSTRAR LISTADO DE CLIENTES REGISTRADOS******************//
 
 function mostrarUsuariosRegistrados(datos) {
@@ -254,21 +305,21 @@ mostrarUsuariosRegistrados(listaUsuarios);
 
 //***************************Function agregar producto al carrito  *******************************//
 
-function agregarAlCarrito(articulo) {
-  productoAComprar.find(
-    (art) => art.id === articulo.id
-  );
-  if (1) {
-    productoAComprar.push(articulo);
-    localStorage.setItem("carrito", JSON.stringify(productoAComprar));
-    Swal.fire({
-      title: "Producto Agregado",
-      icon: "success",
-      confirmButtonText: "Entendido",
-      timer: 800,
-      text: `Producto ${articulo.modelo} agregado`,
-    });
-  } 
+// function agregarAlCarrito(articulo) {
+//   carrito.find(
+//     (art) => art.id === articulo.id
+//   );
+//   if (1) {
+//     carrito.push(articulo);
+//     localStorage.setItem("carrito", JSON.stringify(carrito));
+//     Swal.fire({
+//       title: "Producto Agregado",
+//       icon: "success",
+//       confirmButtonText: "Entendido",
+//       timer: 800,
+//       text: `Producto ${articulo.modelo} agregado`,
+//     });
+//   } 
 //   else
 //     Swal.fire({
 //       title: "Producto ya en carrito",
@@ -276,7 +327,7 @@ function agregarAlCarrito(articulo) {
 //       confirmButtonText: "Entendido",
 //       timer: 1000,
 //     });
-}
+// }
 
 //function calcular total
 function compraTotal(total) {
@@ -292,72 +343,69 @@ function compraTotal(total) {
 
 //*************funcion mostrar producto  en modal************/
 
-function cargarProductosCarrito(detalles) {
-	cardArticulo.innerHTML = "";
-  detalles.forEach((productoCarrito) => {
-    cardArticulo.innerHTML += `<div class="card border-dark mb-1 container-fluid " id="productoCarrito${
-      productoCarrito.id
-    }" style="max-width: 300px;">
-                      <img class="card-img-top" heigth="100px"  src="../imagenes/productos/${
-                        productoCarrito.imagen
-                      }" alt="${productoCarrito.nombre}">
-                      <div class="card-body ">
-                      <h3 class="list-group-item text-center">${
-                        productoCarrito.marca
-                      }</h3>
-                      <h4 class="list-group-item text-center">${
-                        productoCarrito.modelo
-                      }</h4>
-                      <p class="card-text  text-center"> Precio cuotaparte $${
-                        productoCarrito.precio / tickets
-                      }</p>
-			<div class=" d-flex justify-content-center">
-       <button class="btn btn-primary" id="botonSumarProductoCarrito"><i class="fas fa-trash-alt">+</i></button>
+// function cargarProductosCarrito(detalles) {
+// 	cardArticulo.innerHTML = "";
+//   detalles.forEach((productoCarrito) => {
+//     cardArticulo.innerHTML += `<div class="card border-dark mb-1 container-fluid " id="productoCarrito${
+//       productoCarrito.id
+//     }" style="max-width: 300px;">
+//                       <img class="card-img-top" heigth="100px"  src="../imagenes/productos/${
+//                         productoCarrito.imagen
+//                       }" alt="${productoCarrito.nombre}">
+//                       <div class="card-body ">
+//                       <h3 class="list-group-item text-center">${
+//                         productoCarrito.marca
+//                       }</h3>
+//                       <h4 class="list-group-item text-center">${
+//                         productoCarrito.modelo
+//                       }</h4>
+//                       <p class="card-text  text-center"> Precio cuotaparte $${
+//                         productoCarrito.precio / tickets
+//                       }</p>
+// 			<div class=" d-flex justify-content-center">
+//        <button class="btn btn-primary" id="botonSumarProductoCarrito"><i class="fas fa-trash-alt">+</i></button>
      
                 
       
-      <button class="btn btn-danger" id="botonEliminar${
-        productoCarrito.id
-      }"><i class="fas fa-trash-alt">Eliminar</i></button>
-			</div>
-                      </div>
-                      </div>`;
-  });
+//       <button class="btn btn-danger" id="botonEliminar${productoCarrito.id
+//       }"><i class="fas fa-trash-alt">Eliminar</i></button>
+// 			</div>
+//                       </div>
+//                       </div>`;
+//   });
 
-  detalles.forEach((productoCarrito, indice) => {
-    document
-      .getElementById(`botonEliminar${productoCarrito.id}`)
-      .addEventListener("click", () => {
-
+//   detalles.forEach((productoCarrito, indice) => {
+//     document
+//       .getElementById(`botonEliminar${productoCarrito.id}`)
+//       .addEventListener("click", () => {
 
 
-      				  //**************Eliminar del DOM*******//
 
-        let cardProducto = document.getElementById(
-          `productoCarrito${productoCarrito.id}`
-        );
-        cardProducto.remove();
+//       				  //**************Eliminar del DOM*******//
 
-       						 //**********Eliminar del array comprar*******//
-        let productoEliminar = detalles.find(
-          (articulo) => articulo.id === productoCarrito.id
-        );
-        let posicion = detalles.indexOf(productoEliminar);
+//         let cardProducto = document.getElementById(
+//           `productoCarrito${productoCarrito.id}`
+//         );
+//         cardProducto.remove();
 
-        detalles.splice(posicion, 1);
-        console.log(productoAComprar);
+//        						 //**********Eliminar del array comprar*******//
+//         let productoEliminar = detalles.find(
+//           (articulo) => articulo.id === productoCarrito.id
+//         );
+//         let posicion = detalles.indexOf(productoEliminar);
 
-        // productosEnCarrito.splice(indice, 1);
+//         detalles.splice(posicion, 1);
+//         console.log(carrito);
 
-        //**********Eliminar el Storage*******//
 
-        localStorage.setItem(`carrito`, JSON.stringify(productoAComprar));
-        //vuelvo a calcular el total
-        compraTotal(detalles);
-      });
-  });
-  compraTotal(detalles);
-}
+//         //**********Eliminar el Storage*******//
+
+//         localStorage.setItem(`carrito`, JSON.stringify(carrito));
+//         compraTotal(detalles);
+//       });
+//   });
+//   compraTotal(detalles);
+// }
 
 
 
@@ -370,6 +418,7 @@ function ordenarPorPrecio(valor) {
   console.log(ordenMasCaro);
   productosPagina(ordenMasCaro);
 }
+
 
 
 
@@ -394,7 +443,7 @@ function finalizarCompra() {
         text: `Excelente! En breve recibiras informacion de tu/s comunidades , exitos en el proceso  `,
       });
 
-      productoAComprar = [];
+      carrito = [];
       localStorage.removeItem("carrito");
     } else {
       Swal.fire({
